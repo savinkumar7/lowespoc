@@ -1,7 +1,6 @@
 import React from 'react';
 //import {Route} from 'react-router-dom';
-import Home from './component/Home';
-import Products from './component/Products'
+import App ,{loadData} from './component/App';
 
 // export default () =>{
 //     return (
@@ -14,8 +13,9 @@ import Products from './component/Products'
 
 export default [
     {
+        loadData,
             path :'/',
-            component : Products,
+            component : App,
             exact : true
     },
 ]

@@ -3,6 +3,8 @@ import 'babel-polyfill';
 import renderer from './src/client/helpers/renderer';
 import inert from 'inert';
 import createStore from './src/client/helpers/createStore';
+import {matchRoutes} from 'react-router-config';
+import Routes from './src/client/Routes';
 
 const bootupServer = async () =>{
     const server = new Hapi.Server({
@@ -19,7 +21,12 @@ const bootupServer = async () =>{
         path : '/',
         handler : (request,reply) =>{
             const store = createStore();
-            return renderer(request, store);
+            const promises = matchRoutes(Routes, request.url.pathname).map(({route}) =>{
+              return route.loadData ? route.loadData(store) : null ;
+          });
+          return Promise.all(promises).then(() =>{
+            return renderer(request.url.pathname, store);
+          });
         }
     });
 

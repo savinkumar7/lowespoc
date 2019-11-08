@@ -1,6 +1,5 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base');
 const webpackNodeExternals = require('webpack-node-externals');
 
 const config = {
@@ -22,7 +21,28 @@ const config = {
         path: path.resolve(__dirname, 'build')
     },
 
-    externals : [webpackNodeExternals()]
-};
-
-module.exports = merge(baseConfig, config);
+    externals : [webpackNodeExternals()],
+    module: {
+        rules: [
+          {
+            test: /\.js?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            options: {
+              presets: [
+                'react',
+                'stage-0',
+                ['env', { targets: { browsers: ['last 2 versions'] } }]
+              ]
+            }
+          },
+          {
+            test: /\.css$/i,
+            use: ['css-loader'],
+          }
+        ]
+      }
+    };
+    
+    module.exports = config;
+    

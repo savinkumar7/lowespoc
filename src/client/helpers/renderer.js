@@ -9,7 +9,7 @@ import {renderRoutes} from 'react-router-config';
 export default (req, store) => {
     const content = renderToString(
         <Provider store= {store}>
-        <StaticRouter location = {req.path} context = {{}}>
+        <StaticRouter location = {req} context = {{}}>
             <div>{renderRoutes(Routes)}</div>
         </StaticRouter>
         </Provider>

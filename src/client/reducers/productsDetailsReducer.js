@@ -1,11 +1,11 @@
-import {FETCH_PRODUCTS_ASYNC} from '../actions';
+import {FETCH_PRODUCTS} from '../actions';
 
 export default (state =[], action) => {
 
     switch(action.type){
 
-        case FETCH_PRODUCTS_ASYNC:
-            return action.payload.data;
+        case FETCH_PRODUCTS:           
+            return  action.payload.data;
         default :
             return state;
 

@@ -5,6 +5,7 @@ import {FETCH_PRODUCTS} from '../actions';
 
 function Products() {
 
+    
     const products = useSelector(state => state.products);
     const dispatch = useDispatch();
 
@@ -13,16 +14,26 @@ useEffect(() =>{
 }, []);
 
 const renderProduct = () => {
+    debugger;
     return products.map(product =>{
-        return <li key={product.id}>{product.name}</li>
+        return (
+            <div>
+                <li key={product.id}>{product.productName}</li>
+                <img src ={product.thumbNali} alt={product.thumbNali} />
+            </div>
+        
+        )
     });
 };
 
 return(
-        <ul>
-            {renderProduct()}
-        </ul>
+        <ul>{renderProduct()}</ul>
 )
 }
 
+function loadData(store){
+    return store.dispatch({type : FETCH_PRODUCTS});
+}
+
+export {loadData};
 export default Products;

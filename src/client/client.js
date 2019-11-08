@@ -5,16 +5,13 @@ import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import createSagaMiddleware from 'redux-saga';
 import { renderRoutes } from 'react-router-config';
-
 import reducers from './reducers';
-import rootSaga from './actions';
 import routes from './Routes';
+import ReduxThunk from 'redux-thunk';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducers, {}, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(rootSaga);
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 hydrate(
   <Provider store={store}>

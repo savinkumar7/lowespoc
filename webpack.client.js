@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
 
 const config = {
@@ -16,7 +17,33 @@ const config = {
     output: {
         filename :'bundle.js',
         path: path.resolve(__dirname, 'public')
-    }
-};
-
-module.exports = merge(baseConfig, config);
+    },
+    module: {
+        rules: [
+          {
+            test: /\.js?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            options: {
+              presets: [
+                'react',
+                'stage-0',
+                ['env', { targets: { browsers: ['last 2 versions'] } }]
+              ]
+            }
+          },
+          {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+          }
+        ]
+      },
+    
+      plugins: [
+        new ExtractTextPlugin({
+          filename: "css/main.css"
+        })
+      ]
+    };
+    
+    module.exports = config;
