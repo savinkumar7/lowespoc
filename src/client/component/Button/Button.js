@@ -1,9 +1,12 @@
 import React , {useState} from 'react';
 import styled,{css} from'styled-components';
+import { useDispatch} from 'react-redux';
+import { DISPLAY_TO_CART , REMOVE_CART} from '../../actions/cartCount';
 
 
 export default (props) =>{
 
+    const dispatch = useDispatch();
     const ADD_TO_CART = "Add to cart";
     const REMOVE_FROM_CART = "Remove from cart";
     const [buttonContext, setbuttonContext] = useState(ADD_TO_CART);
@@ -28,9 +31,14 @@ export default (props) =>{
 
     const changeButtonContext = () =>{
         if(buttonContext === ADD_TO_CART)
+        {
           setbuttonContext(REMOVE_FROM_CART);
-          else
+          dispatch({type: DISPLAY_TO_CART});
+        }
+          else{
           setbuttonContext(ADD_TO_CART);
+          dispatch({type: REMOVE_CART});
+          }
     }
 
     return(

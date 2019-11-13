@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { addCartCount } from '../../actions'
+import { useSelector, useDispatch } from 'react-redux';
+import { ADD_TO_CART_COUNT } from '../../actions/cartCount';
 
 export default (props) => {
-    
     const [count , setCount] = useState(0);
+    const dispatch = useDispatch();
     const QuantityButton = styled.button`
         width : 30px;
         height : 25px;
@@ -21,8 +23,11 @@ export default (props) => {
     `;
 
     const addQuantity =(totalQuantity) =>{
-        if(count <= totalQuantity )
-      setCount(count + 1);
+        if(count <= totalQuantity ){
+            setCount(count + 1);
+            dispatch({type: ADD_TO_CART_COUNT, value : count});
+        }
+      
       else
         alert("you are exceeding the quantity!!!!")
     };

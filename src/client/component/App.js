@@ -6,6 +6,7 @@ import { fetchProducts } from '../actions'
 import Header from './Header/Header';
 
 class App extends Component {
+    
 
     componentDidMount() {
         this.props.fetchProducts();

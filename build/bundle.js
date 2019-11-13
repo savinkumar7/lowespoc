@@ -97,6 +97,61 @@ module.exports = require("@fortawesome/free-solid-svg-icons");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.fetchProducts = exports.FETCH_PRODUCTS = undefined;
+
+var _axios = __webpack_require__(23);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var FETCH_PRODUCTS = exports.FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+var fetchProducts = exports.fetchProducts = function fetchProducts() {
+    return function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
+            var res;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return _axios2.default.get('http://localhost:8000/public/data.json');
+
+                        case 2:
+                            res = _context.sent;
+
+
+                            dispatch({
+                                type: FETCH_PRODUCTS,
+                                payload: res
+                            });
+
+                        case 4:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, undefined);
+        }));
+
+        return function (_x) {
+            return _ref.apply(this, arguments);
+        };
+    }();
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _react = __webpack_require__(0);
 
@@ -126,13 +181,13 @@ exports.default = [{
 //import {Route} from 'react-router-dom';
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -228,61 +283,6 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.fetchProducts = exports.FETCH_PRODUCTS = undefined;
-
-var _axios = __webpack_require__(23);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var FETCH_PRODUCTS = exports.FETCH_PRODUCTS = 'FETCH_PRODUCTS';
-var fetchProducts = exports.fetchProducts = function fetchProducts() {
-    return function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return _axios2.default.get('http://localhost:8000/public/data.json');
-
-                        case 2:
-                            res = _context.sent;
-
-
-                            dispatch({
-                                type: FETCH_PRODUCTS,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, undefined);
-        }));
-
-        return function (_x) {
-            return _ref.apply(this, arguments);
-        };
-    }();
-};
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
@@ -321,7 +321,7 @@ var _createStore2 = _interopRequireDefault(_createStore);
 
 var _reactRouterConfig = __webpack_require__(8);
 
-var _Routes = __webpack_require__(4);
+var _Routes = __webpack_require__(5);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
@@ -434,13 +434,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(14);
 
-var _Routes = __webpack_require__(4);
+var _Routes = __webpack_require__(5);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
 var _reactRouterDom = __webpack_require__(26);
 
-var _reactRedux = __webpack_require__(5);
+var _reactRedux = __webpack_require__(6);
 
 var _reactRouterConfig = __webpack_require__(8);
 
@@ -487,7 +487,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(5);
+var _reactRedux = __webpack_require__(6);
 
 __webpack_require__(16);
 
@@ -495,7 +495,7 @@ var _ProductsList = __webpack_require__(17);
 
 var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
-var _actions = __webpack_require__(7);
+var _actions = __webpack_require__(4);
 
 var _Header = __webpack_require__(24);
 
@@ -579,7 +579,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchProducts: _ac
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // Module
 exports.push([module.i, ".container{\r\n    background-color: white;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.content-container{\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    justify-content: center;\r\n}\r\n.content-container .filter{\r\n    flex: 0 1 16%;\r\n\r\n}\r\n.content-container .content{\r\n    flex: 0 1 84%;\r\n    flex-flow: row wrap;\r\n    display: flex;\r\n}\r\n.content-container .content > div{\r\n    margin: 5px;\r\n}", ""]);
 
@@ -792,12 +792,17 @@ var _styledComponents = __webpack_require__(1);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _reactRedux = __webpack_require__(6);
+
+var _cartCount = __webpack_require__(32);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 exports.default = function (props) {
 
+    var dispatch = (0, _reactRedux.useDispatch)();
     var ADD_TO_CART = "Add to cart";
     var REMOVE_FROM_CART = "Remove from cart";
 
@@ -809,7 +814,13 @@ exports.default = function (props) {
     var Button = _styledComponents2.default.button(_templateObject, buttonContext == "Remove from cart" && (0, _styledComponents.css)(_templateObject2));
 
     var changeButtonContext = function changeButtonContext() {
-        if (buttonContext === ADD_TO_CART) setbuttonContext(REMOVE_FROM_CART);else setbuttonContext(ADD_TO_CART);
+        if (buttonContext === ADD_TO_CART) {
+            setbuttonContext(REMOVE_FROM_CART);
+            dispatch({ type: _cartCount.DISPLAY_TO_CART });
+        } else {
+            setbuttonContext(ADD_TO_CART);
+            dispatch({ type: _cartCount.REMOVE_CART });
+        }
     };
 
     return _react2.default.createElement(
@@ -849,7 +860,11 @@ var _reactFontawesome = __webpack_require__(2);
 
 var _freeSolidSvgIcons = __webpack_require__(3);
 
-var _actions = __webpack_require__(7);
+var _actions = __webpack_require__(4);
+
+var _reactRedux = __webpack_require__(6);
+
+var _cartCount = __webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -861,11 +876,15 @@ exports.default = function (props) {
         count = _useState2[0],
         setCount = _useState2[1];
 
+    var dispatch = (0, _reactRedux.useDispatch)();
     var QuantityButton = _styledComponents2.default.button(_templateObject);
     var Quantity = _styledComponents2.default.input(_templateObject2);
 
     var addQuantity = function addQuantity(totalQuantity) {
-        if (count <= totalQuantity) setCount(count + 1);else alert("you are exceeding the quantity!!!!");
+        if (count <= totalQuantity) {
+            setCount(count + 1);
+            dispatch({ type: _cartCount.ADD_TO_CART_COUNT, value: count });
+        } else alert("you are exceeding the quantity!!!!");
     };
 
     var removeQuantity = function removeQuantity() {
@@ -920,9 +939,14 @@ var _reactFontawesome = __webpack_require__(2);
 
 var _freeSolidSvgIcons = __webpack_require__(3);
 
+var _reactRedux = __webpack_require__(6);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
+    var data = (0, _reactRedux.useSelector)(function (state) {
+        return state.count;
+    });
     return _react2.default.createElement(
         'header',
         { className: 'header ' },
@@ -939,7 +963,9 @@ var Header = function Header() {
             _react2.default.createElement(
                 'span',
                 null,
-                '(0)'
+                '(',
+                data.displayCount,
+                ')'
             )
         )
     );
@@ -951,7 +977,7 @@ exports.default = Header;
 /* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // Module
 exports.push([module.i, ".header {\r\n    height: 70px !important; \r\n    display: grid;\r\n    grid-template-columns: repeat(7,1fr);\r\n    border:1px solid black;\r\n    border-width: 1px 1px 0px 1px;\r\n    box-shadow: 0px 2px grey;\r\n    padding: 13px;\r\n    margin-top: 5px;\r\n    \r\n}\r\n.icon{\r\n    padding: 10px;\r\n}\r\n.logo {\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    align-self: center;\r\n    justify-self: center;\r\n    color: gray;\r\n}\r\n\r\n.searchBar {\r\n    grid-column: 5/7;\r\n    height: 50px;\r\n    align-self: center;\r\n    border: 1px solid lightgray;\r\n}\r\n\r\n.cart {\r\n    grid-column: 7/8;\r\n    align-self: center;\r\n    justify-self: center;\r\n    display: flex;\r\n}\r\n\r\n.cart > span {\r\n    font-size: 25px;\r\n    margin-left: 8px;\r\n    align-self: center;\r\n}", ""]);
 
@@ -985,7 +1011,7 @@ var _reducers = __webpack_require__(29);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
-var _reduxThunk = __webpack_require__(31);
+var _reduxThunk = __webpack_require__(33);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1015,7 +1041,7 @@ var _productsDetailsReducer = __webpack_require__(30);
 
 var _productsDetailsReducer2 = _interopRequireDefault(_productsDetailsReducer);
 
-var _cartCountDetails = __webpack_require__(32);
+var _cartCountDetails = __webpack_require__(31);
 
 var _cartCountDetails2 = _interopRequireDefault(_cartCountDetails);
 
@@ -1037,7 +1063,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _actions = __webpack_require__(7);
+var _actions = __webpack_require__(4);
 
 exports.default = function () {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -1056,9 +1082,45 @@ exports.default = function () {
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("redux-thunk");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _cartCount = __webpack_require__(32);
+
+var initialState = {
+    count: 0,
+    displayCount: 0
+};
+
+exports.default = function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    var newState = _extends({}, state);
+    switch (action.type) {
+        case _cartCount.ADD_TO_CART_COUNT:
+
+            newState.count = action.value + 1;
+            break;
+        case _cartCount.DISPLAY_TO_CART:
+            newState.displayCount = newState.count;
+            break;
+
+        case _cartCount.REMOVE_CART:
+            newState.count = 0;
+            newState.displayCount = 0;
+            break;
+    }
+    return newState;
+};
 
 /***/ }),
 /* 32 */
@@ -1070,61 +1132,43 @@ module.exports = require("redux-thunk");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _cartCount = __webpack_require__(33);
-
-exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var action = arguments[1];
-
-
-    switch (action.type) {
-        case _cartCount.ADD_TO_CART:
-            {
-                console.log(state);
-            }
-            return action.payload++;
-
-        case _cartCount.REMOVE_FROM_CART:
-            return action.payload--;
-        default:
-            return state;
-    }
-};
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var ADD_TO_CART = exports.ADD_TO_CART = 'add_to_cart';
-var REMOVE_FROM_CART = exports.REMOVE_FROM_CART = 'remove_from_cart';
+var ADD_TO_CART_COUNT = exports.ADD_TO_CART_COUNT = 'add_to_cart';
+var DISPLAY_TO_CART = exports.DISPLAY_TO_CART = 'display_to_cart';
+var REMOVE_CART = exports.REMOVE_CART = 'remove_cart';
 
 var addCartCount = exports.addCartCount = function addCartCount(count) {
     return function (dispatch) {
 
-        //const count = 0 ;
         dispatch({
-            type: ADD_TO_CART,
+            type: ADD_TO_CART_COUNT,
             payload: count
         });
     };
 };
 
-var removeCartCount = exports.removeCartCount = function removeCartCount() {
+var displayToCart = exports.displayToCart = function displayToCart() {
     return function (dispatch) {
 
-        var count = 0;
         dispatch({
-            type: REMOVE_FROM_CART
+            type: DISPLAY_TO_CART
         });
     };
 };
+
+var removeFromCart = exports.removeFromCart = function removeFromCart() {
+    return function (dispatch) {
+
+        dispatch({
+            type: REMOVE_CART
+        });
+    };
+};
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
 
 /***/ })
 /******/ ]);

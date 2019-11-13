@@ -1,21 +1,27 @@
-export const ADD_TO_CART = 'add_to_cart';
-export const REMOVE_FROM_CART = 'remove_from_cart'
+export const ADD_TO_CART_COUNT = 'add_to_cart';
+export const DISPLAY_TO_CART = 'display_to_cart'
+export const REMOVE_CART = 'remove_cart'
 
 
 export const addCartCount =(count) => dispatch =>{
 
-    //const count = 0 ;
     dispatch({
-        type : ADD_TO_CART,
+        type : ADD_TO_CART_COUNT,
         payload : count
     });     
 }
 
 
-export const removeCartCount =() => dispatch =>{
+export const displayToCart =() => dispatch =>{
 
-    const count = 0 ;
     dispatch({
-        type : REMOVE_FROM_CART
+        type : DISPLAY_TO_CART
+    });     
+}
+
+export const removeFromCart =() => dispatch =>{
+
+    dispatch({
+        type : REMOVE_CART
     });     
 }
