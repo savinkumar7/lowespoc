@@ -1,0 +1,21 @@
+.container{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.content-container .filter{
+    flex: 0 1 16%;
+
+}
+.content-container .content{
+    flex: 0 1 84%;
+    flex-flow: row wrap;
+    display: flex;
+}
+.content-container .content > div{
+    margin: 5px;
+}

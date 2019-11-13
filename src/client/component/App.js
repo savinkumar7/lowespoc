@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { FETCH_PRODUCTS } from '../actions';
+import  './index.css'
 import ProductsList from './ProductList/ProductsList'
 import { fetchProducts } from '../actions'
 import Header from './Header/Header';
 
 class App extends Component {
+
     componentDidMount() {
         this.props.fetchProducts();
     }
@@ -18,17 +19,17 @@ class App extends Component {
 
     render() {
         return (
-            <div className="page bg-white" id="petratings">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12 bg-white">
-                        
-                                <Header />
-
-                                <ProductsList productList={this.props.products} />
-                           
+            <div className="container">
+                <Header />
+                <div className="content-container">
+                    <div className="filter">
+                            filter container
+                        </div >
+                        <div className="content">
+                            <ProductsList productList={this.props.products} />
                         </div>
-                    </div>
+            
+                
                 </div>
             </div>
         )
