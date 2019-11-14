@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -83,165 +83,6 @@ module.exports = require("styled-components");
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/free-solid-svg-icons");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var ADD_TO_CART_COUNT = exports.ADD_TO_CART_COUNT = 'add_to_cart';
-var DISPLAY_TO_CART = exports.DISPLAY_TO_CART = 'display_to_cart';
-var REMOVE_CART = exports.REMOVE_CART = 'remove_cart';
-
-var addCartCount = exports.addCartCount = function addCartCount(count) {
-    return function (dispatch) {
-
-        dispatch({
-            type: ADD_TO_CART_COUNT,
-            payload: count
-        });
-    };
-};
-
-var displayToCart = exports.displayToCart = function displayToCart() {
-    return function (dispatch) {
-
-        dispatch({
-            type: DISPLAY_TO_CART
-        });
-    };
-};
-
-var removeFromCart = exports.removeFromCart = function removeFromCart() {
-    return function (dispatch) {
-
-        dispatch({
-            type: REMOVE_CART
-        });
-    };
-};
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.fetchProducts = exports.FETCH_PRODUCTS = undefined;
-
-var _axios = __webpack_require__(24);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var FETCH_PRODUCTS = exports.FETCH_PRODUCTS = 'FETCH_PRODUCTS';
-
-var fetchProducts = exports.fetchProducts = function fetchProducts() {
-    return function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return _axios2.default.get('http://localhost:8000/public/data.json');
-
-                        case 2:
-                            res = _context.sent;
-
-
-                            dispatch({
-                                type: FETCH_PRODUCTS,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, undefined);
-        }));
-
-        return function (_x) {
-            return _ref.apply(this, arguments);
-        };
-    }();
-};
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _App = __webpack_require__(16);
-
-var _App2 = _interopRequireDefault(_App);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// export default () =>{
-//     return (
-//         <div>
-//             <Route exact path ="/" component ={Home} />
-//             <Route path ="/users" component ={UsersList} />
-//         </div>
-//     )
-// }
-
-exports.default = [{
-    loadData: _App.loadData,
-    path: '/',
-    component: _App2.default,
-    exact: true
-}, {
-
-    path: '/cart',
-    component: function component() {
-        return _react2.default.createElement(
-            'div',
-            null,
-            'Cart Details'
-        );
-    },
-    exact: true
-}];
-//import {Route} from 'react-router-dom';
-
-/***/ }),
-/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -337,45 +178,271 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 9 */
+/* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
-/* 10 */
+/* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("@fortawesome/free-solid-svg-icons");
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _hapi = __webpack_require__(12);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var ADD_TO_CART_COUNT = exports.ADD_TO_CART_COUNT = 'add_to_cart';
+var DISPLAY_TO_CART = exports.DISPLAY_TO_CART = 'display_to_cart';
+var REMOVE_CART = exports.REMOVE_CART = 'remove_cart';
+
+var addCartCount = exports.addCartCount = function addCartCount(count) {
+    return function (dispatch) {
+
+        dispatch({
+            type: ADD_TO_CART_COUNT,
+            payload: count
+        });
+    };
+};
+
+var displayToCart = exports.displayToCart = function displayToCart() {
+    return function (dispatch) {
+
+        dispatch({
+            type: DISPLAY_TO_CART
+        });
+    };
+};
+
+var removeFromCart = exports.removeFromCart = function removeFromCart() {
+    return function (dispatch) {
+
+        dispatch({
+            type: REMOVE_CART
+        });
+    };
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fetchProducts = exports.FETCH_PRODUCTS = undefined;
+
+var _axios = __webpack_require__(9);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var FETCH_PRODUCTS = exports.FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+
+var fetchProducts = exports.fetchProducts = function fetchProducts() {
+    return function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
+            var res;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return _axios2.default.get('http://localhost:8000/public/data.json');
+
+                        case 2:
+                            res = _context.sent;
+
+
+                            dispatch({
+                                type: FETCH_PRODUCTS,
+                                payload: res
+                            });
+
+                        case 4:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, undefined);
+        }));
+
+        return function (_x) {
+            return _ref.apply(this, arguments);
+        };
+    }();
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _App = __webpack_require__(19);
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// export default () =>{
+//     return (
+//         <div>
+//             <Route exact path ="/" component ={Home} />
+//             <Route path ="/users" component ={UsersList} />
+//         </div>
+//     )
+// }
+
+exports.default = [{
+    loadData: _App.loadData,
+    path: '/',
+    component: _App2.default,
+    exact: true
+}, {
+
+    path: '/cart',
+    component: function component() {
+        return _react2.default.createElement(
+            'div',
+            null,
+            'Cart Details'
+        );
+    },
+    exact: true
+}];
+//import {Route} from 'react-router-dom';
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fetchFilters = exports.FETCH_FILTERS = undefined;
+
+var _axios = __webpack_require__(9);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var FETCH_FILTERS = exports.FETCH_FILTERS = 'FETCH_FILTERS';
+var fetchFilters = exports.fetchFilters = function fetchFilters() {
+    return function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
+            var res;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return _axios2.default.get('http://localhost:8000/public/filter.json');
+
+                        case 2:
+                            res = _context.sent;
+
+
+                            dispatch({
+                                type: FETCH_FILTERS,
+                                payload: res
+                            });
+
+                        case 4:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, undefined);
+        }));
+
+        return function (_x) {
+            return _ref.apply(this, arguments);
+        };
+    }();
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-config");
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _hapi = __webpack_require__(15);
 
 var _hapi2 = _interopRequireDefault(_hapi);
 
-__webpack_require__(13);
+__webpack_require__(16);
 
-var _renderer = __webpack_require__(14);
+var _renderer = __webpack_require__(17);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _inert = __webpack_require__(28);
+var _inert = __webpack_require__(31);
 
 var _inert2 = _interopRequireDefault(_inert);
 
-var _createStore = __webpack_require__(29);
+var _createStore = __webpack_require__(32);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
-var _reactRouterConfig = __webpack_require__(9);
+var _reactRouterConfig = __webpack_require__(12);
 
-var _Routes = __webpack_require__(7);
+var _Routes = __webpack_require__(8);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
@@ -460,19 +527,19 @@ process.on('unhandledRejection', function (err) {
 bootupServer();
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("hapi");
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -486,17 +553,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(15);
+var _server = __webpack_require__(18);
 
-var _Routes = __webpack_require__(7);
+var _Routes = __webpack_require__(8);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _reactRouterDom = __webpack_require__(27);
+var _reactRouterDom = __webpack_require__(11);
 
 var _reactRedux = __webpack_require__(1);
 
-var _reactRouterConfig = __webpack_require__(9);
+var _reactRouterConfig = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -518,13 +585,13 @@ exports.default = function (req, store) {
 };
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,21 +610,21 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(1);
 
-__webpack_require__(17);
+__webpack_require__(20);
 
-var _ProductsList = __webpack_require__(18);
+var _ProductsList = __webpack_require__(21);
 
 var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
-var _index = __webpack_require__(6);
+var _index = __webpack_require__(7);
 
-var _filters = __webpack_require__(37);
+var _filters = __webpack_require__(10);
 
-var _Header = __webpack_require__(25);
+var _Header = __webpack_require__(27);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Accordian = __webpack_require__(34);
+var _Accordian = __webpack_require__(29);
 
 var _Accordian2 = _interopRequireDefault(_Accordian);
 
@@ -638,16 +705,16 @@ exports.loadData = loadData;
 exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchProducts: _index.fetchProducts, fetchFilters: _filters.fetchFilters })(App);
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(8)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // Module
 exports.push([module.i, ".container{\r\n    background-color: white;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.content-container{\r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    justify-content: center;\r\n}\r\n.content-container .filter{\r\n    flex: 0 1 16%;\r\n\r\n}\r\n.content-container .content{\r\n    flex: 0 1 84%;\r\n    flex-flow: row wrap;\r\n    display: flex;\r\n}\r\n.content-container .content > div{\r\n    margin: 5px;\r\n}", ""]);
 
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -661,9 +728,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _agGridReact = __webpack_require__(19);
+var _agGridReact = __webpack_require__(22);
 
-var _ProductDetail = __webpack_require__(20);
+var _ProductDetail = __webpack_require__(23);
 
 var _ProductDetail2 = _interopRequireDefault(_ProductDetail);
 
@@ -683,13 +750,13 @@ var ProductsList = function ProductsList(props) {
 exports.default = ProductsList;
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("ag-grid-react");
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -713,15 +780,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ProductRating = __webpack_require__(21);
+var _ProductRating = __webpack_require__(24);
 
 var _ProductRating2 = _interopRequireDefault(_ProductRating);
 
-var _Button = __webpack_require__(22);
+var _Button = __webpack_require__(25);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _AddQuantity = __webpack_require__(23);
+var _AddQuantity = __webpack_require__(26);
 
 var _AddQuantity2 = _interopRequireDefault(_AddQuantity);
 
@@ -771,7 +838,7 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -792,9 +859,9 @@ var _styledComponents = __webpack_require__(2);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _reactFontawesome = __webpack_require__(3);
+var _reactFontawesome = __webpack_require__(4);
 
-var _freeSolidSvgIcons = __webpack_require__(4);
+var _freeSolidSvgIcons = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -831,7 +898,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -856,7 +923,7 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _reactRedux = __webpack_require__(1);
 
-var _cartCount = __webpack_require__(5);
+var _cartCount = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -895,7 +962,7 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -918,15 +985,15 @@ var _styledComponents = __webpack_require__(2);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _reactFontawesome = __webpack_require__(3);
+var _reactFontawesome = __webpack_require__(4);
 
-var _freeSolidSvgIcons = __webpack_require__(4);
+var _freeSolidSvgIcons = __webpack_require__(5);
 
-var _actions = __webpack_require__(6);
+var _actions = __webpack_require__(7);
 
 var _reactRedux = __webpack_require__(1);
 
-var _cartCount = __webpack_require__(5);
+var _cartCount = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -975,13 +1042,7 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -995,15 +1056,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(26);
+__webpack_require__(28);
 
-var _reactFontawesome = __webpack_require__(3);
+var _reactFontawesome = __webpack_require__(4);
 
-var _freeSolidSvgIcons = __webpack_require__(4);
+var _freeSolidSvgIcons = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(1);
 
-var _reactRouterDom = __webpack_require__(27);
+var _reactRouterDom = __webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1011,6 +1072,7 @@ var Header = function Header() {
     var data = (0, _reactRedux.useSelector)(function (state) {
         return state.count;
     });
+
     return _react2.default.createElement(
         'header',
         { className: 'header ' },
@@ -1022,16 +1084,18 @@ var Header = function Header() {
         _react2.default.createElement('input', { className: 'searchBar', type: 'search' }),
         _react2.default.createElement(
             'div',
-            { className: 'icon', onClick: function onClick() {
-                    return _react2.default.createElement(_reactRouterDom.Link, { to: '/cart' });
-                } },
+            { className: 'icon' },
             _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faShoppingCart, size: "2x" }),
             _react2.default.createElement(
                 'span',
                 null,
-                '(',
-                data.displayCount,
-                ')'
+                data.displayCount > 0 ? _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/new-route' },
+                    '(',
+                    data.displayCount,
+                    ')'
+                ) : "(0)"
             )
         )
     );
@@ -1040,170 +1104,16 @@ var Header = function Header() {
 exports.default = Header;
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(8)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // Module
 exports.push([module.i, ".header {\r\n    height: 70px !important; \r\n    display: flex;\r\n    flex-flow: row wrap;\r\n    /* grid-template-columns: repeat(7,1fr); */\r\n    border:1px solid black;\r\n    border-width: 1px 1px 0px 1px;\r\n    box-shadow: 0px 2px grey;\r\n    padding: 13px;\r\n    margin-top: 5px;\r\n    \r\n}\r\n.icon{\r\n    padding: 10px;\r\n    flex: 0 1 10%;\r\n}\r\n.logo {\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    align-self: center;\r\n    justify-self: center;\r\n    color: gray;\r\n    float: right;\r\n    flex: 0 1 30%;\r\n}\r\n\r\n.searchBar {\r\n    float:right;\r\n    height: 50px;\r\n    align-self: center;\r\n    border: 1px solid lightgray;\r\n    flex: 0 1 60%;\r\n}\r\n\r\n.cart {\r\n    align-self: center;\r\n    justify-self: center;\r\n    display: flex;\r\n    \r\n}\r\n\r\n.cart > span {\r\n    font-size: 25px;\r\n    margin-left: 8px;\r\n    align-self: center;\r\n}", ""]);
 
 
 /***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-module.exports = require("inert");
-
-/***/ }),
 /* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _redux = __webpack_require__(10);
-
-var _reducers = __webpack_require__(30);
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
-var _reduxThunk = __webpack_require__(33);
-
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function () {
-
-    var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-
-    return store;
-};
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _redux = __webpack_require__(10);
-
-var _productsDetailsReducer = __webpack_require__(31);
-
-var _productsDetailsReducer2 = _interopRequireDefault(_productsDetailsReducer);
-
-var _cartCountDetails = __webpack_require__(32);
-
-var _cartCountDetails2 = _interopRequireDefault(_cartCountDetails);
-
-var _filtersDetailsReducer = __webpack_require__(36);
-
-var _filtersDetailsReducer2 = _interopRequireDefault(_filtersDetailsReducer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = (0, _redux.combineReducers)({
-    products: _productsDetailsReducer2.default,
-    count: _cartCountDetails2.default,
-    filters: _filtersDetailsReducer2.default
-
-});
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _actions = __webpack_require__(6);
-
-exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var action = arguments[1];
-
-
-    switch (action.type) {
-
-        case _actions.FETCH_PRODUCTS:
-            return action.payload.data;
-        case _actions.FETCH_FILTERS:
-            return action.payload.data;
-        default:
-            return state;
-
-    }
-};
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _cartCount = __webpack_require__(5);
-
-var initialState = {
-    count: 0,
-    displayCount: 0
-};
-
-exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-    var action = arguments[1];
-
-    var newState = _extends({}, state);
-    switch (action.type) {
-        case _cartCount.ADD_TO_CART_COUNT:
-
-            newState.count = action.value + 1;
-            break;
-        case _cartCount.DISPLAY_TO_CART:
-            newState.displayCount = newState.count;
-            break;
-
-        case _cartCount.REMOVE_CART:
-            newState.count = 0;
-            newState.displayCount = 0;
-            break;
-    }
-    return newState;
-};
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
-
-/***/ }),
-/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1228,7 +1138,7 @@ var _styledComponents = __webpack_require__(2);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-__webpack_require__(35);
+__webpack_require__(30);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1295,15 +1205,157 @@ var Accordion = function Accordion(props) {
 exports.default = Accordion;
 
 /***/ }),
-/* 35 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(8)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // Imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap);", ""]);
 // Module
 exports.push([module.i, "/* Style the buttons that are used to open and close the accordion panel */\r\n.accordion {\r\n  background-color: white;\r\n  color: gray;\r\n  cursor: pointer;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n  display: flex;\r\n  align-items: center;\r\n  border: 1px solid lightgray;\r\n  outline: none;\r\n  transition: background-color 0.6s ease;\r\n  margin:0px;\r\n}\r\n\r\n/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */\r\n.accordion:hover,\r\n.active {\r\n  background-color: #ccc;\r\n}\r\n  \r\n/* Style the accordion content title */\r\n.accordion__title {\r\n  font-family: \"Open Sans\", sans-serif;\r\n  font-weight: 600;\r\n  font-size: 14px;\r\n  margin: 12px 0px;\r\n\r\n}\r\n\r\n", ""]);
 
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = require("inert");
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _redux = __webpack_require__(13);
+
+var _reducers = __webpack_require__(33);
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+var _reduxThunk = __webpack_require__(37);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+
+    var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+
+    return store;
+};
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _redux = __webpack_require__(13);
+
+var _productsDetailsReducer = __webpack_require__(34);
+
+var _productsDetailsReducer2 = _interopRequireDefault(_productsDetailsReducer);
+
+var _cartCountDetails = __webpack_require__(35);
+
+var _cartCountDetails2 = _interopRequireDefault(_cartCountDetails);
+
+var _filtersDetailsReducer = __webpack_require__(36);
+
+var _filtersDetailsReducer2 = _interopRequireDefault(_filtersDetailsReducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _redux.combineReducers)({
+    products: _productsDetailsReducer2.default,
+    count: _cartCountDetails2.default,
+    filters: _filtersDetailsReducer2.default
+
+});
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _actions = __webpack_require__(7);
+
+exports.default = function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var action = arguments[1];
+
+
+    switch (action.type) {
+
+        case _actions.FETCH_PRODUCTS:
+            return action.payload.data;
+        case _actions.FETCH_FILTERS:
+            return action.payload.data;
+        default:
+            return state;
+
+    }
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _cartCount = __webpack_require__(6);
+
+var initialState = {
+    count: 0,
+    displayCount: 0
+};
+
+exports.default = function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    var newState = _extends({}, state);
+    switch (action.type) {
+        case _cartCount.ADD_TO_CART_COUNT:
+
+            newState.count = action.value + 1;
+            break;
+        case _cartCount.DISPLAY_TO_CART:
+            newState.displayCount = newState.count;
+            break;
+
+        case _cartCount.REMOVE_CART:
+            newState.count = 0;
+            newState.displayCount = 0;
+            break;
+    }
+    return newState;
+};
 
 /***/ }),
 /* 36 */
@@ -1316,7 +1368,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _filters = __webpack_require__(37);
+var _filters = __webpack_require__(10);
 
 exports.default = function () {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -1336,58 +1388,9 @@ exports.default = function () {
 
 /***/ }),
 /* 37 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.fetchFilters = exports.FETCH_FILTERS = undefined;
-
-var _axios = __webpack_require__(24);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var FETCH_FILTERS = exports.FETCH_FILTERS = 'FETCH_FILTERS';
-var fetchFilters = exports.fetchFilters = function fetchFilters() {
-    return function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return _axios2.default.get('http://localhost:8000/public/filter.json');
-
-                        case 2:
-                            res = _context.sent;
-
-
-                            dispatch({
-                                type: FETCH_FILTERS,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, undefined);
-        }));
-
-        return function (_x) {
-            return _ref.apply(this, arguments);
-        };
-    }();
-};
+module.exports = require("redux-thunk");
 
 /***/ })
 /******/ ]);
