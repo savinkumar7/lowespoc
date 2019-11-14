@@ -1,10 +1,10 @@
-import React , {useState} from 'react';
-import styled,{css} from'styled-components';
-import { useDispatch} from 'react-redux';
-import { DISPLAY_TO_CART , REMOVE_CART} from '../../actions/cartCount';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { DISPLAY_TO_CART, REMOVE_CART } from '../../actions/cartCount';
 
 
-export default (props) =>{
+export default (props) => {
 
     const dispatch = useDispatch();
     const ADD_TO_CART = "Add to cart";
@@ -22,27 +22,26 @@ export default (props) =>{
         border-color: #2e6da4;
     
 
-        ${buttonContext == "Remove from cart" && css `
+        ${buttonContext == "Remove from cart" && css`
         background-color: #d9534f;
         border-color: #d43f3a;
         `};
     
     `;
 
-    const changeButtonContext = () =>{
-        if(buttonContext === ADD_TO_CART)
-        {
-          setbuttonContext(REMOVE_FROM_CART);
-          dispatch({type: DISPLAY_TO_CART});
+    const changeButtonContext = () => {
+        if (buttonContext === ADD_TO_CART) {
+            setbuttonContext(REMOVE_FROM_CART);
+            dispatch({ type: DISPLAY_TO_CART });
         }
-          else{
-          setbuttonContext(ADD_TO_CART);
-          dispatch({type: REMOVE_CART});
-          }
+        else {
+            setbuttonContext(ADD_TO_CART);
+            dispatch({ type: REMOVE_CART });
+        }
     }
 
-    return(
-        <Button onClick = {() => changeButtonContext()}>{buttonContext}</Button>
-    
+    return (
+        <Button onClick={() => changeButtonContext()}>{buttonContext}</Button>
+
     )
 }

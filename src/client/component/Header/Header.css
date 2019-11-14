@@ -1,7 +1,8 @@
 .header {
     height: 70px !important; 
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
+    display: flex;
+    flex-flow: row wrap;
+    /* grid-template-columns: repeat(7,1fr); */
     border:1px solid black;
     border-width: 1px 1px 0px 1px;
     box-shadow: 0px 2px grey;
@@ -11,6 +12,7 @@
 }
 .icon{
     padding: 10px;
+    flex: 0 1 10%;
 }
 .logo {
     font-size: 25px;
@@ -18,20 +20,23 @@
     align-self: center;
     justify-self: center;
     color: gray;
+    float: right;
+    flex: 0 1 30%;
 }
 
 .searchBar {
-    grid-column: 5/7;
+    float:right;
     height: 50px;
     align-self: center;
     border: 1px solid lightgray;
+    flex: 0 1 60%;
 }
 
 .cart {
-    grid-column: 7/8;
     align-self: center;
     justify-self: center;
     display: flex;
+    
 }
 
 .cart > span {

@@ -18,4 +18,10 @@ export default [
             component : App,
             exact : true
     },
-]
+    {
+        
+            path :'/cart',
+            component : () => (<div>Cart Details</div>),
+            exact:true
+    }
+];

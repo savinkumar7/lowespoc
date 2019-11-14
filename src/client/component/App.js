@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import { useSelector, useDispatch, connect } from 'react-redux';
-import  './index.css'
+import './index.css'
 import ProductsList from './ProductList/ProductsList'
-import { fetchProducts } from '../actions'
+import { fetchProducts } from '../actions/index';
+import {fetchFilters} from '../actions/filters';
 import Header from './Header/Header';
+import Accordian from './Accordian/Accordian';
 
 class App extends Component {
-    
+
 
     componentDidMount() {
         this.props.fetchProducts();
+        this.props.fetchFilters();
     }
 
     renderUsers() {
@@ -24,13 +27,13 @@ class App extends Component {
                 <Header />
                 <div className="content-container">
                     <div className="filter">
-                            filter container
+                        <Accordian filtersList = {this.props.filters}/>
                         </div >
-                        <div className="content">
-                            <ProductsList productList={this.props.products} />
-                        </div>
-            
-                
+                    <div className="content">
+                        <ProductsList productList={this.props.products} />
+                    </div>
+
+
                 </div>
             </div>
         )
@@ -39,7 +42,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: state.products,
+        filters : state.filters
     }
 }
 
@@ -48,4 +52,4 @@ function loadData(store) {
 }
 
 export { loadData };
-export default connect(mapStateToProps, { fetchProducts })(App)
+export default connect(mapStateToProps, { fetchProducts , fetchFilters})(App)

@@ -18,7 +18,7 @@ const bootupServer = async () =>{
 
     server.route({
         method: 'GET',
-        path : '/',
+        path : '/{any*}',
         handler : (request,reply) =>{
             const store = createStore();
             const promises = matchRoutes(Routes, request.url.pathname).map(({route}) =>{
