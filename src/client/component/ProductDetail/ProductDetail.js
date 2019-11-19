@@ -37,13 +37,6 @@ export default (props) =>{
     padding-left: 3px;
     `;
  
-    const removeQuantity =() =>{
-        if(count > 0)
-            setCount(count - 1);
-            else
-            alert("oops !! you cannot beyond this")
-      }
-
     return (
         <Container >
             <Image src = {props.product.thumbNail}/>

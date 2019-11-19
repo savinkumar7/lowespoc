@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import { DISPLAY_TO_CART, REMOVE_CART } from '../../actions/cartCount';
 
 
@@ -10,8 +10,10 @@ export default (props) => {
     const ADD_TO_CART = "Add to cart";
     const REMOVE_FROM_CART = "Remove from cart";
     const [buttonContext, setbuttonContext] = useState(ADD_TO_CART);
-
-    const Button = styled.button`
+    const data = useSelector(state => state.count.count);
+    const Button = styled.button.attrs({
+        disabled : !data
+    })`
         width : 110px;
         height : 35px;
         border: 1px solid #357ebd;
@@ -20,7 +22,8 @@ export default (props) => {
         color: #fff;
         background-color: #337ab7;
         border-color: #2e6da4;
-    
+        pointer: hand;
+      
 
         ${buttonContext == "Remove from cart" && css`
         background-color: #d9534f;
@@ -41,7 +44,8 @@ export default (props) => {
     }
 
     return (
-        <Button onClick={() => changeButtonContext()}>{buttonContext}</Button>
+
+        <Button  onClick={() => changeButtonContext()}>{buttonContext}</Button>
 
     )
 }
