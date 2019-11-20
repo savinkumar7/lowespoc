@@ -16,7 +16,7 @@ const Header = () => {
             <input className="searchBar" type="search" />
             <div className="icon">
                 <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
-                <span >{data.displayCount > 0 ? <Link to="/new-route">({data.displayCount})</Link> : "(0)"}</span>
+                <span >{data.displayCount > 0 ? <Link to="/cart">({data.displayCount})</Link> : "(0)"}</span>
 
             </div>
 
