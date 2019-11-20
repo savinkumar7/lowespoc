@@ -45,7 +45,7 @@ export default (props) => {
 
     return (
 
-        <Button  onClick={() => changeButtonContext()}>{buttonContext}</Button>
+        <Button >{buttonContext}</Button>
 
     )
 }
